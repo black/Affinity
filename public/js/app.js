@@ -8,5 +8,20 @@ new Vue({
         return {
             active: 'login'
         }
+    },
+    methods: {
+        checkIfLogin() {
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    this.active = 'dash';
+                    store.dispatch('updateAdmin');
+                } else {
+                    this.active = 'login';
+                }
+            });
+        }
+    },
+    mounted: function() {
+    	this.checkIfLogin();
     }
 });

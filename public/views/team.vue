@@ -1,25 +1,33 @@
 <template>
     <ul>
-        <li> 
-            <user v-bind:imgsrc="'https://github.com/jonrohan.png?v=3&s=96'"></user> 
+        <li>
+            <user v-bind:imgsrc="getAdmin.photoURL"></user>
         </li>
-         <li v-for="user in userlist">
-             <user v-bind:imgsrc="'https://github.com/jonrohan.png?v=3&s=96'"></user>
-        </li> 
+        <li v-for="user in userlist">
+            <user v-bind:imgsrc="'https://github.com/jonrohan.png?v=3&s=96'"></user>
+        </li>
 </template>
 <script>
-module.exports = {  
+module.exports = {
     components: {
         'user': httpVueLoader('../views/user.vue')
     },
     data: function() {
         return {
             title: "teams",
-            userlist:[]
+            userlist: []
         }
     },
     methods: {
-
+        googleSignOut() {
+            firebase.auth().signOut();
+            location.reload();
+        }
+    },
+    computed: {
+        getAdmin() {
+            return store.getters.getAdmin;
+        }
     }
 }
 </script>
@@ -36,5 +44,4 @@ li {
     display: grid;
     grid-template-columns: 1fr;
 }
- 
 </style>
