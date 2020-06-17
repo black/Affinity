@@ -1,0 +1,18 @@
+html,
+body {
+	font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    max-height: 100vh;
+    overflow:hidden; 
+    background-image: linear-gradient(135deg, #1C1C1C 10%, #000000 70%);
+}
+
+*{
+	box-sizing: border-box;
+}
+ 
+#app{
+	height: 100vh;
+}
