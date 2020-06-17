@@ -15,7 +15,13 @@ module.exports = {
     },
     methods: {
         login() {
-            console.log(this.msg);
+            let authProvider = new firebase.auth.GoogleAuthProvider;
+            firebase.auth().signInWithPopup(authProvider)
+                .then((res) => {
+                    console.log(res);
+                }).catch((err) => {
+                    console.log('err:', err);
+                });
         }
     }
 }
