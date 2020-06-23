@@ -1,10 +1,8 @@
 <template>
-    <div class="Box">
-        <ul>
-            <li v-for="note in notelist" class="Box-row">
-                <note v-bind:msg="note.msg"></note>
-            </li> 
-        </ul>
+    <div class="d-flex flex-wrap">
+        <div v-for="note in notelist" class="p-5 px-6 border bg-white">
+            <note v-bind:msg="note.msg"></note>
+        </div>
     </div>
 </template>
 <script>

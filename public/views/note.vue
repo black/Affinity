@@ -1,5 +1,11 @@
 <template>
-    <span>{{msg}}</span>
+    <div>
+        <span>{{msg}}</span>
+        <details class="details-reset mt-3">
+            <summary class="btn-link">More <span class="dropdown-caret"></summary>
+            <div class="border p-4 mt-2">Hidden text</div>
+        </details>
+    </div>
 </template>
 <script>
 module.exports = {

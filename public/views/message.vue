@@ -1,11 +1,6 @@
 <template>
-    <div class="input-group bg-gray-dark p-3 mt-n3 ml-n3 mr-n3">
-        <input v-model="msg" class="form-control input-dark input" type="text" placeholder="Dark input small" aria-label="Dark input">
-        <span class="input-group-button">
-            <button class="btn" type="button" v-on:click="sendNote()">
-                <span class="mdi mdi-android-messages"></span>
-            </button>
-        </span>
+    <div class="form-group-body">
+        <textarea class="form-control dim" v-model="msg" id="example-textarea"></textarea>
     </div>
 </template>
 <script>
@@ -23,8 +18,9 @@ module.exports = {
 }
 </script>
 <style scoped>
-.input-group {
-    width: 400px;
+.dim {
+    width: 40vw;
+    /* height: 100px;*/
 }
 
 .mdi {
