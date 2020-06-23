@@ -1,11 +1,9 @@
 <template> 
-    <li>
-      <img class="CircleBadge avatar avatar-small" alt="jonrohan" v-bind:src="imgsrc" width="32" height="32" />
-    </li>
+    <img class="CircleBadge avatar avatar-small" alt="jonrohan" v-bind:src="imgsrc" width="32" height="32" />
 </template>
 <script>
 module.exports = {
-  props:['imgsrc'],
+  props:['name','imgsrc','email'],
     data: function() {
         return {
            

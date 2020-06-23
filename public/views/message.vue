@@ -19,7 +19,7 @@ module.exports = {
 </script>
 <style scoped>
 .dim {
-    width: 40vw;
+    width: 30vw;
     /* height: 100px;*/
 }
 

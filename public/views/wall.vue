@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap p-3">
         <div v-for="note in notelist" class="p-5 px-6 border bg-white">
             <note v-bind:msg="note.msg"></note>
         </div>

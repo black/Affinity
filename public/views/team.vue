@@ -1,11 +1,19 @@
 <template>
-    <ul>
-        <li>
-            <user v-bind:imgsrc="getAdmin.photoURL"></user>
-        </li>
-        <li v-for="user in userlist">
-            <user v-bind:imgsrc="'https://github.com/jonrohan.png?v=3&s=96'"></user>
-        </li>
+    <div class="d-flex flex-items-start">
+        <div class="d-flex flex-justify-center">
+            <img class="CircleBadge avatar avatar-small mr-3" alt="jonrohan" v-bind:src="getAdmin.photoURL" width="32" height="32" />
+            <div>
+                <span>{{getAdmin.displayName}}</span>
+                <span class="f6 d-block">{{getAdmin.email}}</span>
+            </div>
+        </div>
+        <div class="px-6">
+            <div class="AvatarStack AvatarStack--five-plus ">
+                <div class="AvatarStack-body tooltipped tooltipped-se tooltipped-align-left-1">
+                    <img v-for="user in userlist" class="CircleBadge avatar avatar-lg" v-bind:src="user.src" width="32" height="32" />
+                </div>
+            </div>
+        </div>
 </template>
 <script>
 module.exports = {
@@ -15,7 +23,13 @@ module.exports = {
     data: function() {
         return {
             title: "teams",
-            userlist: []
+            userlist: [{
+                src: 'https://github.com/jonrohan.png?v=3&s=96'
+            }, {
+                src: 'https://github.com/jonrohan.png?v=3&s=96'
+            }, {
+                src: 'https://github.com/jonrohan.png?v=3&s=96'
+            }]
         }
     },
     methods: {
