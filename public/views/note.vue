@@ -1,22 +1,30 @@
 <template>
-    <div>
-        <span>{{msg}}</span>
-        <details class="details-reset mt-3">
-            <summary class="btn-link">More <span class="dropdown-caret"></summary>
-            <div class="border p-4 mt-2">Hidden text</div>
-        </details>
-    </div>
+    <div class="col-md-2 float-left border p-1 m-1 rounded-1 border-0" v-bind:class="'bg-'+selected">
+        <p v-bind:class="checkDarkBg(selected)?'text-white':'text-dark'" class="p-3">{{msg}}</p>
+        <div class="float-right">
+            <span class="mdi mdi-circle" v-bind:class="'text-'+col" v-for="col in colors" v-on:click="changeColor(col)"></span>
+        </div>
+    </div> 
 </template>
 <script>
 module.exports = {
     props: ['msg'],
     data: function() {
         return {
-            title: "notes"
+            title: "notes",
+            colors: ['yellow', 'green', 'red', 'purple', 'blue', 'gray-dark'],
+            selected:'gray-light'
         }
     },
     methods: {
-
+        changeColor(col){
+            this.selected = col;
+            console.log(col);
+        },
+        checkDarkBg(col){
+            if(col=='yellow'||col=='green'||col=='gray-light') return false;
+            else return true;
+        }
     }
 }
 </script>
