@@ -1,4 +1,4 @@
-# Liaise
+# Affinity
 A brain storming tool for teams
 
  
