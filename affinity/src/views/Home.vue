@@ -1,17 +1,38 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    {{title}}
+    <Note />
+    <AddNote/>
+    {{getProjectName}}
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Note from "@/components/Note.vue";
+import AddNote from "@/components/AddNote.vue";
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
+   components: {
+    Note,
+    AddNote
   },
+  data(){
+    return{
+      title:'Home',
+    }
+  },
+  computed:{
+    getProjectName() {
+      console.log('NotesList',this.$store.getters.getProjectName);
+      return this.$store.getters.getProjectName;
+    },
+  }
 };
 </script>
+
+<style scoped>
+.home{
+  padding:5%;
+}
+</style>
