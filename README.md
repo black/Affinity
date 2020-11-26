@@ -1,6 +1,24 @@
-# Affinity
-A brain storming tool for teams
+# affinity
 
- 
+## Project setup
+```
+npm install
+```
 
-![PREVIEW](https://github.com/black/Liaise/blob/master/liaise.png)
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

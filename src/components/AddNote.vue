@@ -3,23 +3,36 @@
        {{title}}
         <input type="text" v-model="msg">
         <button v-on:click="addNote()">ADD</button>
+        <h4>
+          status: {{getNoteAddStatus}}
+        </h4>
     </div> 
 </template>
 <script>
-module.exports = { 
+export default { 
+  props:['team'],
   data() {
     return {  
-       title:'Add node', 
-        msg:''
+       title:'Add node',
+       msg:''
     }
   }, 
+  computed:{
+    getNoteAddStatus(){
+      return this.$store.getters.getNoteAddStatus;
+    }
+  },
   methods: { 
     addNote(){ 
         let note = {
             msg: this.msg,
             avatar:'wolf'
         };
-        this.$store.dispatch("updateNotes",note);
+        this.$store.dispatch("addNotes",{
+          "team":this.team,
+          "data":note
+        });
+        this.msg = '';
     }
   },  
 }
