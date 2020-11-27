@@ -6,6 +6,10 @@
      return state.user;
  }
 
+ let getTeamMembers = (state) => {
+     return state.teamMembers;
+ }
+
  let getLoginStatus = (state) => {
      return state.loginStatus;
  }
@@ -20,6 +24,7 @@
 
  export default {
      getTeamName,
+     getTeamMembers,
      getNotes,
      getLoginStatus,
      getNoteAddStatus,

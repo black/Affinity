@@ -46,8 +46,18 @@ const updateTeam = (context, payload) => {
         snapshot.forEach(function (data) {
             console.log(data.key, data.val());
             context.commit('updateTeam', data.key);
+            context.dispatch('updateTeamMembers', data.key);
             context.dispatch('fetchNotes', data.key);
         });
+    });
+}
+
+// get team memebers list under admin asynchronously
+const updateTeamMembers = (context, payload) => {
+    let database = firebase.database();
+    const dbRef = database.ref(`/participants/${payload}`);
+    dbRef.on('value', (snapshot) => {
+        context.commit('updateTeamMembers', snapshot.val());
     });
 }
 
@@ -80,6 +90,7 @@ const initApp = (context, user) => {
 export default {
     login,
     updateTeam,
+    updateTeamMembers,
     addNotes,
     signout,
     checkIfLogin,

@@ -16,6 +16,11 @@ const updateTeam = (state, data) => {
     state.teamName = data;
 }
 
+const updateTeamMembers = (state, data) => {
+    console.log("committing team member", data);
+    state.teamMembers = data;
+}
+
 const updateNotes = (state, data) => {
     console.log("committing new notes", data);
     state.notes = data;
@@ -30,6 +35,7 @@ export default {
     setLoginStatus,
     updateNotes,
     updateTeam,
+    updateTeamMembers,
     addNoteStatus,
     updateUser
 };
