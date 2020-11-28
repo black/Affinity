@@ -1,5 +1,6 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <div class="home flex flex-col h-screen justify-stretch bg-gray-100">
     <TopBar v-bind:team="getTeamName" v-bind:status="getLoginStatus"/> 
     <div class="grid grid-flow-col flex-grow">
@@ -17,6 +18,8 @@
       <Admin  class="flex-shrink px-5"/>
     </div>
 =======
+=======
+>>>>>>> parent of 43a83b0... started stlying with tailwindcss
   <div class="home">
     <p class="navbar">
        {{getTeamName}} : {{getLoginStatus}}  <br>
@@ -25,6 +28,9 @@
     </p>
     <Notes/>
     <AddNote v-bind:team='getTeamName' /> 
+<<<<<<< HEAD
+>>>>>>> parent of 43a83b0... started stlying with tailwindcss
+=======
 >>>>>>> parent of 43a83b0... started stlying with tailwindcss
   </div>
 </template>
@@ -32,11 +38,17 @@
 <script>
 // @ is an alias to /src
 <<<<<<< HEAD
+<<<<<<< HEAD
 import TopBar from "@/components/TopBar.vue"
 import Notes from "@/components/Notes.vue"
 // import AddNote from "@/components/AddNote.vue"
 import Admin from "@/components/Admin.vue"
 import Members from "@/components/Member.vue"
+=======
+import Notes from "@/components/Notes.vue";
+import AddNote from "@/components/AddNote.vue";
+import Team from "@/components/Team.vue";
+>>>>>>> parent of 43a83b0... started stlying with tailwindcss
 =======
 import Notes from "@/components/Notes.vue";
 import AddNote from "@/components/AddNote.vue";
@@ -54,6 +66,9 @@ export default {
 =======
     AddNote,
     Team
+<<<<<<< HEAD
+>>>>>>> parent of 43a83b0... started stlying with tailwindcss
+=======
 >>>>>>> parent of 43a83b0... started stlying with tailwindcss
   },
   data(){
