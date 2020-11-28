@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="home flex flex-col h-screen justify-stretch bg-gray-100">
     <TopBar v-bind:team="getTeamName" v-bind:status="getLoginStatus"/> 
     <div class="grid grid-flow-col flex-grow">
@@ -15,24 +16,45 @@
       <Members />
       <Admin  class="flex-shrink px-5"/>
     </div>
+=======
+  <div class="home">
+    <p class="navbar">
+       {{getTeamName}} : {{getLoginStatus}}  <br>
+       <button @click="logOut()">LOGOUT</button>
+       <Team />
+    </p>
+    <Notes/>
+    <AddNote v-bind:team='getTeamName' /> 
+>>>>>>> parent of 43a83b0... started stlying with tailwindcss
   </div>
-</template> 
-<script>
+</template>
 
+<script>
 // @ is an alias to /src
+<<<<<<< HEAD
 import TopBar from "@/components/TopBar.vue"
 import Notes from "@/components/Notes.vue"
 // import AddNote from "@/components/AddNote.vue"
 import Admin from "@/components/Admin.vue"
 import Members from "@/components/Member.vue"
+=======
+import Notes from "@/components/Notes.vue";
+import AddNote from "@/components/AddNote.vue";
+import Team from "@/components/Team.vue";
+>>>>>>> parent of 43a83b0... started stlying with tailwindcss
 
 export default {
    components: {
     Notes,
+<<<<<<< HEAD
     TopBar,
     // AddNote,
     Admin,
      Members
+=======
+    AddNote,
+    Team
+>>>>>>> parent of 43a83b0... started stlying with tailwindcss
   },
   data(){
     return{
@@ -47,9 +69,12 @@ export default {
       return this.$store.getters.getTeamName;
     },
   },
-  methods:{ 
+  methods:{
     checkLogin(){
       this.$store.dispatch('checkIfLogin');
+    },
+    logOut(){
+      this.$store.dispatch('signout');
     }
   },
   mounted(){
@@ -59,5 +84,10 @@ export default {
 </script>
 
 <style scoped>
- 
+.home{
+  padding:5%;
+}
+.navbar{
+  padding: 5%;
+}
 </style>

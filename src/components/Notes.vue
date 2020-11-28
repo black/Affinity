@@ -1,20 +1,19 @@
 <template>
-    <div class="grid grid-cols-6 overflow-y-scroll">
-        <div v-for="(item,key) in getNotes" :key="key" class="flex border border-red-300 bg-red-100 rounded p-2.5 m-1"> 
-            <div class="flex flex-col"> 
-              <span class="text-xl">{{item.msg}}</span>
-              <div class="flex flex-row">
-                <span class="text-xs font-bold text-red-400">{{item.avatar}}</span>
-              </div>
-            </div>
-        </div> 
+    <div>
+       {{title}}
+        <ul>
+          <li v-for="(item,key) in getNotes" :key="key">
+            <h3>{{item.msg}} </h3>
+            <h6><span>{{item.avatar}} : {{key}}</span></h6>
+          </li>
+        </ul>
     </div> 
 </template>
 <script>
 export default{ 
   data() {
     return {  
-       title:'', 
+       title:'Notes List', 
     }
   },  
   computed: {
