@@ -1,13 +1,13 @@
 <template>
-    <div class="Box Box--condensed border-0">
-        <div class="Box-header border-0 d-flex flex-items-center">
-            <img class="CircleBadge avatar avatar-small mr-3" alt="jonrohan" v-bind:src="getAdmin.photoURL" width="32" height="32" />
-            <div v-on:click="googleSignOut()">
-                <span class="h4 d-block">{{getAdmin.displayName}}</span>
-                <span class="f6 d-block">{{getAdmin.email}}</span>
-            </div>
-            <span class="State ml-3">+{{online}}</span> 
+    <div class="p-1">
+        <div class="flex flex-row align-middle">
+            <img v-bind:src="getAdmin.photoURL" alt="" class="border rounded-full items-center justify-center h-12 w-12 p-1 mr-2">
+            <div class="flex flex-col justify-center">
+                <span class="font-bold text p-0 m-0">{{getAdmin.displayName}}</span> 
+                <span class="text-xs text-gray-500">{{getAdmin.email}}</span>
+            </div> 
         </div>
+        <button class="hidden" v-on:click="googleSignOut()">LogOut</button> 
     </div>
 </template>
 <script>

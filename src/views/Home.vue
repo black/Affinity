@@ -1,79 +1,44 @@
 <template>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <div class="home flex flex-col h-screen justify-stretch bg-gray-100">
-    <TopBar v-bind:team="getTeamName" v-bind:status="getLoginStatus"/> 
-    <div class="grid grid-flow-col flex-grow">
-      <div class="flex flex-col">  
-        <Notes/> 
-      </div>  
-    </div>
-    <div class="flex flex-row items-center justify-between w-100 py-2">
-      <div class="flex-shrink px-5">
-        <span class="text-xs block  text-gray-400">TEAM</span>
-        <span class="text-base uppercase">{{getTeamName}}</span>
+    <div class="home flex flex-col h-screen justify-stretch bg-gray-100">
+      <TopBar v-bind:team="getTeamName" v-bind:status="getLoginStatus"/>    
+      <div class="grid grid-flow-col flex-grow">
+        <div class="flex flex-col bg-grey-lighter">  
+            <div class="flex flex-col">
+                <Notes/>
+            </div> 
+        </div>  
       </div>
-      <!-- <AddNote  class="w-1/3" v-bind:team="getTeamName"/>  -->
-      <Members />
-      <Admin  class="flex-shrink px-5"/>
-    </div>
-=======
-=======
->>>>>>> parent of 43a83b0... started stlying with tailwindcss
-  <div class="home">
-    <p class="navbar">
-       {{getTeamName}} : {{getLoginStatus}}  <br>
-       <button @click="logOut()">LOGOUT</button>
-       <Team />
-    </p>
-    <Notes/>
-    <AddNote v-bind:team='getTeamName' /> 
-<<<<<<< HEAD
->>>>>>> parent of 43a83b0... started stlying with tailwindcss
-=======
->>>>>>> parent of 43a83b0... started stlying with tailwindcss
-  </div>
+      <div class="flex flex-row items-center justify-between w-100 py-2 bg-green-dark">
+        <div class="flex-shrink px-5">
+          <span class="text-xs block  text-gray-400">TEAM</span>
+          <span class="text-base uppercase">{{getTeamName}}</span>
+        </div>
+        <!-- <AddNote  class="w-1/3" v-bind:team="getTeamName"/>  -->
+        <Members />
+        <Admin  class="flex-shrink px-5"/>
+      </div> 
+    </div> 
 </template>
 
 <script>
 // @ is an alias to /src
-<<<<<<< HEAD
-<<<<<<< HEAD
 import TopBar from "@/components/TopBar.vue"
 import Notes from "@/components/Notes.vue"
-// import AddNote from "@/components/AddNote.vue"
 import Admin from "@/components/Admin.vue"
-import Members from "@/components/Member.vue"
-=======
-import Notes from "@/components/Notes.vue";
-import AddNote from "@/components/AddNote.vue";
-import Team from "@/components/Team.vue";
->>>>>>> parent of 43a83b0... started stlying with tailwindcss
-=======
-import Notes from "@/components/Notes.vue";
-import AddNote from "@/components/AddNote.vue";
-import Team from "@/components/Team.vue";
->>>>>>> parent of 43a83b0... started stlying with tailwindcss
+import Members from "@/components/Member.vue"  
+// import AddNote from "@/components/AddNote.vue"  
 
 export default {
    components: {
-    Notes,
-<<<<<<< HEAD
-    TopBar,
-    // AddNote,
+    TopBar, 
+    Notes, 
     Admin,
-     Members
-=======
-    AddNote,
-    Team
-<<<<<<< HEAD
->>>>>>> parent of 43a83b0... started stlying with tailwindcss
-=======
->>>>>>> parent of 43a83b0... started stlying with tailwindcss
+    Members, 
+    // AddNote, 
   },
   data(){
     return{
-      title:'Home',
+     
     }
   },
   computed:{
@@ -99,10 +64,5 @@ export default {
 </script>
 
 <style scoped>
-.home{
-  padding:5%;
-}
-.navbar{
-  padding: 5%;
-}
+ 
 </style>

@@ -2,10 +2,13 @@
      return state.teamName;
  }
 
+ let getTeamMembers = (state) => {
+     return state.teamMembers;
+ }
+
  let getUser = (state) => {
      return state.user;
  }
-
  let getLoginStatus = (state) => {
      return state.loginStatus;
  }
@@ -20,6 +23,7 @@
 
  export default {
      getTeamName,
+     getTeamMembers,
      getNotes,
      getLoginStatus,
      getNoteAddStatus,
