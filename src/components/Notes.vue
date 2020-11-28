@@ -20,7 +20,7 @@ export default{
   computed: {
     getNotes() { 
       return this.$store.getters.getNotes;
-    },
+    }
   },   
 }
 </script>

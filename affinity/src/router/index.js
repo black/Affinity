@@ -7,19 +7,11 @@ Vue.use(VueRouter)
 const routes = [{
     path: '/',
     name: 'Login',
-    component: Login,
+    component: Login
   },
   {
     path: '/home',
     name: 'Home',
-    beforeEach: (to, from, next) => {
-      console.log("checkeing...")
-      if (this.$store.getters.getLoginStatus == true) {
-        console.log("checked...")
-        next();
-        return;
-      }
-    },
     component: () => import( /* webpackChunkName: "about" */ '../views/Home.vue')
   }
 ]

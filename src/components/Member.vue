@@ -1,14 +1,12 @@
 <template>
     <div class="flex">
-        <ul v-for="(member,key) in getMembers" :key="key"> 
+        <ul v-for="(member,key) in getMembers" :key="key" class="list-none flex flex-row"> 
             <div class="flex flex-row rounded p-4">
-            <div class="rounded-full items-center justify-center flex-shrink-0 h-12 w-12 bg-blue-100 text-blue-500">
-                <img v-bind:src="member.profile" alt="">
-            </div>
-            <div class="flex flex-col flex-grow ml-4">
-                <div class="text-sm text-gray-500">{{member.email}}</div>
-                <div class="font-bold text-lg">{{member.name}}</div>
-            </div>
+                <img v-bind:src="member.profile" alt="" class="border rounded-full items-center justify-center h-12 w-12 p-1 mr-2">
+                <!-- <div class="flex flex-col flex-grow ml-4">
+                    <div class="text-sm text-gray-500">{{member.email}}</div>
+                    <div class="font-bold text-lg">{{member.name}}</div>
+                </div> -->
             </div>
        </ul>    
     </div>
