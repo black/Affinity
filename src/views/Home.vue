@@ -1,12 +1,12 @@
 <template>
-    <div class="flex flex-col h-screen">
+    <div class="flex flex-col h-screen bg-grey-light">
       <TopBar v-bind:team="getTeamName" v-bind:status="getLoginStatus"/>    
        <div class="flex-1 flex bg-gray-100 overflow-hidden">
-            <div class="flex-1 overflow-y-scroll">
+            <div class="flex-1 overflow-y-scroll bg-white p-3">
                <Notes/> 
             </div>
        </div>
-        <div class=" flex flex-row items-center justify-between">
+        <div class="flex flex-row items-center justify-between">
           <div class="flex-shrink px-5">
             <span class="text-xs block  text-gray-400">TEAM</span>
             <span class="text-base uppercase">{{getTeamName}}</span>

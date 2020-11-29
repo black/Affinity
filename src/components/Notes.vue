@@ -1,9 +1,7 @@
-<template>
-    <div class="grid grid-cols-6 gap-4 bg-red p-5" >    
-        <div  v-for="(item,key) in getNotes" :key="key">
-          <Note v-bind:item="item" /> 
-        </div>
-    </div> 
+<template>    
+  <div  class="grid grid-cols-6 gap-2" > 
+      <Note  v-bind:item="item" v-for="(item,key) in getNotes" :key="key" />  
+  </div> 
 </template>
 <script>
 

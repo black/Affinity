@@ -1,5 +1,5 @@
 <template> 
-    <div class="flex flex-col border-2 rounded p-3 border-grey-100 bg-white"> 
+    <div class="border-2 border-grey-100 rounded p-3 bg-white"> 
         <span class="text-xl">{{item.msg}}</span>
         <div class="flex flex-row">
             <span class="text-xs font-bold text-red-400">{{item.avatar}}</span>

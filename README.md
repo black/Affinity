@@ -1,4 +1,4 @@
-# affinity
+# new_project
 
 ## Project setup
 ```
