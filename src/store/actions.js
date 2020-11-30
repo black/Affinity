@@ -41,10 +41,10 @@ const updateUser = (context, payload) => {
 // get team name under admin asynchronously
 const updateTeam = (context, payload) => {
     let database = firebase.database();
-    const dbRef = database.ref(`/admin/${payload}/teams`);
+    const dbRef = database.ref(`/admin/${payload}`);
     dbRef.on('value', (snapshot) => {
         snapshot.forEach(function (data) {
-            console.log(data.key, data.val());
+            console.log("TEAM", data.key, data.val());
             context.commit('updateTeam', data.key);
             context.dispatch('updateTeamMembers', data.key);
             context.dispatch('fetchNotes', data.key);
