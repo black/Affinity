@@ -21,11 +21,21 @@
      return state.notestatus;
  }
 
+ let getBias = (state) => {
+     return state.bias;
+ }
+
+ let getAIStatus = (state) => {
+     return state.ai;
+ }
+
  export default {
      getTeamName,
      getTeamMembers,
      getNotes,
      getLoginStatus,
      getNoteAddStatus,
-     getUser
+     getUser,
+     getBias,
+     getAIStatus
  }

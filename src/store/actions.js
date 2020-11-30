@@ -79,6 +79,15 @@ const addNotes = (context, payload) => {
     context.commit('addNoteStatus', 'success');
 }
 
+// set Bais
+const setBias = (context, bias) => {
+    context.commit('setBias', bias);
+}
+
+const setAIstatus = (context, status) => {
+    context.commit('setAIStatus', status);
+}
+
 const initApp = (context, user) => {
     context.commit('setLoginStatus', true);
     router.push('/home');
@@ -95,5 +104,7 @@ export default {
     signout,
     checkIfLogin,
     fetchNotes,
-    updateUser
+    updateUser,
+    setBias,
+    setAIstatus
 };

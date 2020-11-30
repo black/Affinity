@@ -30,6 +30,14 @@ const addNoteStatus = (state, data) => {
     state.notestatus = data;
 }
 
+const setBias = (state, data) => {
+    state.bias = data;
+}
+
+const setAIStatus = (state, status) => {
+    state.ai = status;
+}
+
 export default {
     setAdmin,
     setLoginStatus,
@@ -37,5 +45,7 @@ export default {
     updateTeam,
     updateTeamMembers,
     addNoteStatus,
-    updateUser
+    updateUser,
+    setBias,
+    setAIStatus
 };

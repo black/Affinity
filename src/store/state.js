@@ -1,6 +1,8 @@
 const states = {
     user: '',
     teamName: '',
+    bias: true,
+    ai: true,
     teamMembers: '',
     notestatus: '',
     loginStatus: false,

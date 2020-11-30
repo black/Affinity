@@ -1,6 +1,9 @@
 <template>
     <div class="flex flex-col h-screen bg-grey-light">
-      <TopBar v-bind:team="getTeamName" v-bind:status="getLoginStatus"/>    
+      <div class="flex flex-row justify-between">
+        <TopBar v-bind:team="getTeamName" v-bind:status="getLoginStatus"/>    
+        <Tools class="p-3"/>
+      </div>
        <div class="flex-1 flex bg-gray-100 overflow-hidden">
             <div class="flex-1 overflow-y-scroll bg-white p-3">
                <Notes/> 
@@ -21,7 +24,8 @@
 <script>
 // @ is an alias to /src
 import TopBar from "@/components/TopBar.vue"
-  import Notes from "@/components/Notes.vue"
+import Notes from "@/components/Notes.vue"
+import Tools from "@/components/Tools.vue"
 import Admin from "@/components/Admin.vue"
 import Members from "@/components/Member.vue"  
 // import AddNote from "@/components/AddNote.vue"  
@@ -32,6 +36,7 @@ export default {
     Notes, 
     Admin,
     Members, 
+    Tools,
     // AddNote, 
   },
   data(){
