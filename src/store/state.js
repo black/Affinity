@@ -2,7 +2,7 @@ const states = {
     user: '',
     teamName: '',
     teamUID: '',
-    bias: true,
+    bias: false,
     ai: true,
     teamMembers: '',
     pendingInvites: '',
