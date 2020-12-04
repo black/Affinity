@@ -1,37 +1,47 @@
- let getTeamName = (state) => {
+ const getTeamID = (state) => {
+     return state.teamUID;
+ }
+
+ const getTeamName = (state) => {
      return state.teamName;
  }
 
- let getTeamMembers = (state) => {
+ const getTeamMembers = (state) => {
      return state.teamMembers;
  }
 
- let getUser = (state) => {
+ const getInvites = (state) => {
+     return state.pendingInvites;
+ }
+
+ const getUser = (state) => {
      return state.user;
  }
- let getLoginStatus = (state) => {
+ const getLoginStatus = (state) => {
      return state.loginStatus;
  }
 
- let getNotes = (state) => {
+ const getNotes = (state) => {
      return state.notes;
  }
 
- let getNoteAddStatus = (state) => {
+ const getNoteAddStatus = (state) => {
      return state.notestatus;
  }
 
- let getBias = (state) => {
+ const getBias = (state) => {
      return state.bias;
  }
 
- let getAIStatus = (state) => {
+ const getAIStatus = (state) => {
      return state.ai;
  }
 
  export default {
+     getTeamID,
      getTeamName,
      getTeamMembers,
+     getInvites,
      getNotes,
      getLoginStatus,
      getNoteAddStatus,

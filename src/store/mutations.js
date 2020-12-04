@@ -2,7 +2,6 @@ const setAdmin = (state, data) => {
     state.admin = data;
 }
 const setLoginStatus = (state, data) => {
-    console.log("committing status", data);
     state.loginStatus = data;
 }
 
@@ -11,18 +10,19 @@ const updateUser = (state, data) => {
     // same problem : https://stackoverflow.com/a/44051194/3789164
 }
 
-const updateTeam = (state, data) => {
-    console.log("committing team name", data);
+const updateTeamID = (state, uid) => {
+    state.teamUID = uid;
+}
+
+const updateTeamName = (state, data) => {
     state.teamName = data;
 }
 
 const updateTeamMembers = (state, data) => {
-    console.log("committing team member", data);
     state.teamMembers = data;
 }
 
 const updateNotes = (state, data) => {
-    console.log("committing new notes", data);
     state.notes = data;
 }
 
@@ -38,12 +38,18 @@ const setAIStatus = (state, status) => {
     state.ai = status;
 }
 
+const updatePendingList = (state, list) => {
+    state.pendingInvites = JSON.parse(JSON.stringify(list));
+}
+
 export default {
     setAdmin,
     setLoginStatus,
+    updateTeamID,
+    updateTeamName,
     updateNotes,
-    updateTeam,
     updateTeamMembers,
+    updatePendingList,
     addNoteStatus,
     updateUser,
     setBias,

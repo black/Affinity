@@ -12,7 +12,7 @@
         <div class="flex flex-row items-center justify-between">
           <div class="flex-shrink px-5">
             <span class="text-xs block  text-gray-400">TEAM</span>
-            <span class="text-base uppercase">{{getTeamName}}</span>
+            <span class="text-base uppercase">{{getTeamName.name}}</span>
           </div>
           <!-- <AddNote  class="w-1/3" v-bind:team="getTeamName"/>  -->
           <Members />
