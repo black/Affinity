@@ -2,10 +2,6 @@
     <div class="flex flex-col h-screen bg-grey-light">
       <div class="flex flex-row justify-between">
         <TopBar v-bind:team="getCurrTeam" v-bind:status="getLoginStatus"/>     
-          <ul>
-            <li v-for="(team,key) in getTeamList" :key="key" class="p-5 border border-gray-900" @click="selecteTeam(key,team)">{{team.name}}</li>
-          </ul>
-        <CreateTeam />
         <Tools class="p-3"/>
       </div>
        <div class="flex-1 flex bg-gray-100 overflow-hidden">
@@ -14,11 +10,19 @@
             </div>
        </div>
         <div class="flex flex-row items-center justify-between">
-          <div class="flex-shrink px-5">
+          <div class="flex-shrink px-5 cursor-pointer hover:opacity-40" @click="showTeam=!showTeam">
             <span class="text-xs block  text-gray-400">TEAM</span>
             <span class="text-base uppercase">{{getCurrTeam.name}}</span>
           </div>
           <!-- <AddNote  class="w-1/3" v-bind:team="getTeamName"/>  -->
+          <div class="flex flex-row fixed bottom-24 left-5" v-show="showTeam"> 
+              <ul class="border divide-y-2 divide-dashed">
+                <li v-for="(team,key) in getTeamList" :key="key" class="px-4 py-3 cursor-pointer hover:bg-gray-50" @click="selecteTeam(key,team)">{{team.name}}</li>
+                <li> 
+                    <CreateTeam />
+                </li>
+              </ul>
+          </div>
           <Members />
           <Admin  class="flex-shrink px-5"/>
         </div> 
@@ -47,7 +51,7 @@ export default {
   },
   data(){
     return{
-     
+      showTeam:false
     }
   },
   computed:{

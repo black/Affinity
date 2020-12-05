@@ -1,6 +1,6 @@
 <template> 
       <div class="flex">
-          <input v-model="email" type="email" class="flex-1 rounded-l py-3 flex-stretch border text-gray-800 border-gray-200 px-5 bg-white" placeholder="Your idea here..."/>
+          <input v-model="email" type="email" class="flex-1 rounded-l py-3 flex-stretch border text-gray-800 border-gray-200 px-5 bg-white" placeholder="Invite New Team Members here..."/>
           <button v-on:click="inviteMember()" class="rounded-r bg-blue-400 text-white font-bold px-5 uppercase">ADD</button>
       </div>   
 </template>

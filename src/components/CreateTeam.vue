@@ -1,7 +1,7 @@
 <template> 
       <div class="flex bg-yellow-200">
-          <input v-model="team" class="flex-1 rounded-l py-3 flex-stretch border text-gray-800 border-gray-200 px-5 bg-white" placeholder="Your idea here..."/>
-          <button v-on:click="createTeam()" class="rounded-r bg-blue-400 text-white font-bold px-5 uppercase">ADD</button>
+          <input v-model="team" class="flex-1 py-3 flex-stretch px-5 bg-gray-100 focus:outline-none" placeholder="Create a new team"/>
+          <button v-on:click="createTeam()" class="px-5 text-2xl">+</button>
       </div>   
 </template>
 <script>

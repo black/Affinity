@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gray-100">
-        <button @click="setAIstatus()" class="uppercase px-3 border-2 border-gray-900">{{getAIStatus}}</button>
-        <button @click="unbaised()" class="uppercase px-3 border-2 border-gray-900">{{getBias}}</button>
+        <button @click="setAIstatus()" class="uppercase px-3 border-2 border-gray-900 outline-none">{{getAIStatus}}</button>
+        <button @click="unbaised()" class="uppercase px-3 border-2 border-gray-900 outline-none">{{getBias}}</button>
     </div> 
 </template>
 
