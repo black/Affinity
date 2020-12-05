@@ -1,9 +1,13 @@
- const getTeamID = (state) => {
-     return state.teamUID;
+ const getTeamList = (state) => {
+     return state.teamList;
  }
 
- const getTeamName = (state) => {
-     return state.teamName;
+ const getCurrTeamId = (state) => {
+     return state.currTeamId
+ }
+
+ const getCurrTeam = (state) => {
+     return state.currTeamInfo;
  }
 
  const getTeamMembers = (state) => {
@@ -38,8 +42,9 @@
  }
 
  export default {
-     getTeamID,
-     getTeamName,
+     getTeamList,
+     getCurrTeam,
+     getCurrTeamId,
      getTeamMembers,
      getInvites,
      getNotes,

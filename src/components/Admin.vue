@@ -24,7 +24,7 @@ export default {
         }
     },
     computed: {
-        getAdmin() {
+        getAdmin() {  
             return this.$store.getters.getUser;
         }
     }

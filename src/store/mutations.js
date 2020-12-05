@@ -10,12 +10,19 @@ const updateUser = (state, data) => {
     // same problem : https://stackoverflow.com/a/44051194/3789164
 }
 
-const updateTeamID = (state, uid) => {
-    state.teamUID = uid;
+
+//--------------------------------------
+
+const updateTeamList = (state, payload) => {
+    state.teamList = JSON.parse(JSON.stringify(payload));
 }
 
-const updateTeamName = (state, data) => {
-    state.teamName = data;
+const updateTeamId = (state, payload) => {
+    state.currTeamId = payload;
+}
+
+const updateTeamInfo = (state, payload) => {
+    state.currTeamInfo = payload;
 }
 
 const updateTeamMembers = (state, data) => {
@@ -45,8 +52,9 @@ const updatePendingList = (state, list) => {
 export default {
     setAdmin,
     setLoginStatus,
-    updateTeamID,
-    updateTeamName,
+    updateTeamList,
+    updateTeamId,
+    updateTeamInfo,
     updateNotes,
     updateTeamMembers,
     updatePendingList,

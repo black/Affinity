@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import router from "@/router";
 
+//----------------------------------------------------------------------------------------------
 // init login with popup
 const login = (context) => {
     let authProvider = new firebase.auth.GoogleAuthProvider;
@@ -37,24 +38,43 @@ const updateUser = (context, payload) => {
     context.commit('updateUser', payload);
 }
 
+//----------------------------------------------------------------------------------------------
+
+// create new team 
+const createTeam = (context, payload) => {
+    let database = firebase.database();
+    const dbRef = database.ref(`/admin/${payload.id}`);
+    dbRef.push(payload.data).then(() => {
+        context.dispatch('updateTeamList', payload.id);
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+
 // get team name under admin asynchronously
-const updateTeamID = (context, payload) => {
+const updateTeamList = (context, payload) => {
     let database = firebase.database();
     const dbRef = database.ref(`/admin/${payload}`);
     dbRef.on('value', (snapshot) => {
+        context.commit('updateTeamList', snapshot.val());
         snapshot.forEach(function (data) {
-            console.log("TEAM", data.key, data.val());
-            context.commit('updateTeamID', data.key);
-            context.dispatch('updateTeamName', data.val());
-            context.dispatch('updateTeamMembers', data.key);
-            context.dispatch('fetchNotes', data.key);
-        });
+            context.dispatch('updateCurrTeamId', data.key);
+            context.dispatch('updateCurrTeamInfo', data.val());
+        })
     });
 }
 
-// get team name under admin asynchronously
-const updateTeamName = (context, payload) => {
-    context.commit('updateTeamName', payload);
+
+// update Id of the selected team id
+const updateCurrTeamId = (context, payload) => {
+    context.commit('updateTeamId', payload);
+    context.dispatch('fetchNotes', payload);
+}
+
+// update Id of the selected team info
+const updateCurrTeamInfo = (context, payload) => {
+    context.commit('updateTeamInfo', payload);
 }
 
 
@@ -100,12 +120,10 @@ const setAIstatus = (context, status) => {
 
 // invite user
 const inviteUser = (context, data) => {
-    console.log(data);
     let database = firebase.database();
     const dbRef = database.ref(`/invite`);
-    dbRef.push(data).then(res => {
+    dbRef.push(data).then(() => {
         context.dispatch('updatePendingInvites', data.team);
-        console.error("res->", res);
     }).catch(err => {
         console.error("err->", err);
     });
@@ -125,15 +143,17 @@ const updatePendingInvites = (context, data) => {
 const initApp = (context, user) => {
     context.commit('setLoginStatus', true);
     router.push('/home');
-    context.dispatch('updateTeamID', user.uid);
     context.dispatch('updateUser', user);
+    context.dispatch('updateTeamList', user.uid);
 }
 
 
 export default {
     login,
-    updateTeamID,
-    updateTeamName,
+    createTeam,
+    updateTeamList,
+    updateCurrTeamId,
+    updateCurrTeamInfo,
     updateTeamMembers,
     updatePendingInvites,
     fetchNotes,
@@ -143,5 +163,5 @@ export default {
     updateUser,
     setBias,
     setAIstatus,
-    inviteUser
+    inviteUser,
 };

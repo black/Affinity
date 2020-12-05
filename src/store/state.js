@@ -1,13 +1,14 @@
 const states = {
     user: '',
-    teamName: '',
-    teamUID: '',
-    bias: false,
-    ai: true,
+    teamList: '',
+    currTeamId: '',
+    currTeamInfo: '',
     teamMembers: '',
     pendingInvites: '',
     notestatus: '',
     loginStatus: false,
+    bias: false,
+    ai: true,
     notes: null
 };
 

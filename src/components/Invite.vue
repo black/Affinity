@@ -16,8 +16,9 @@ export default {
          console.log(this.email);
          this.$store.dispatch('inviteUser',{
            mail:this.email,
-           team:this.$store.getters.getTeamID, 
-           status:'pending'
+           team:this.$store.getters.getCurrTeamId, 
+           status:'pending',
+           info:this.$store.getters.getCurrTeam
          })
     }
   },  
