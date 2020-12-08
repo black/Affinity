@@ -1,4 +1,4 @@
-# new_project
+# A F F I N I T Y
 
 ## Project setup
 ```
